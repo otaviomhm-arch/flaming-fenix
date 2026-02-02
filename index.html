@@ -5,28 +5,14 @@
 <title>Kit e Keys Flaming Fênix</title>
 
 <style>
-/* ===== FUNDO COM FOGO ===== */
-<script>
-function toggleVip(id) {
-  const box = document.getElementById(id);
-
-  if (box.style.display === "none" || box.style.display === "") {
-    box.style.display = "block";
-  } else {
-    box.style.display = "none";
-  }
-}
-</script>
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: radial-gradient(circle at bottom, #ff4500, #1a0000 70%);
   color: white;
-  overflow-x: hidden;
 }
 
-/* CHAMAS ANIMADAS */
+/* FOGO */
 .fire {
   position: fixed;
   bottom: 0;
@@ -37,34 +23,16 @@ body {
   animation: flames 3s infinite alternate;
   z-index: -1;
 }
-
 @keyframes flames {
-  0% {
-    transform: scaleY(1) translateY(0);
-    opacity: 0.6;
-  }
-  100% {
-    transform: scaleY(1.2) translateY(-40px);
-    opacity: 1;
-  }
+  0% { transform: translateY(0); opacity: .6; }
+  100% { transform: translateY(-40px); opacity: 1; }
 }
 
-/* ===== TITULOS ===== */
-h1 {
+h1, h2 {
   text-align: center;
-  margin: 40px 0;
-  color: #ffae00;
-  text-shadow: 0 0 15px #ff4500, 0 0 30px red;
+  text-shadow: 0 0 15px #ff4500;
 }
 
-h2 {
-  text-align: center;
-  color: #ff944d;
-  margin-top: 50px;
-  text-shadow: 0 0 10px #ff4500;
-}
-
-/* ===== CONTAINER ===== */
 .container {
   display: flex;
   justify-content: center;
@@ -73,58 +41,32 @@ h2 {
   padding: 20px;
 }
 
-/* ===== CARD ===== */
 .card {
   background: linear-gradient(145deg, #2b0000, #5a0000);
   width: 280px;
   border-radius: 18px;
   padding: 20px;
   box-shadow: 0 0 25px rgba(255, 69, 0, 0.6);
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.card:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 40px rgba(255, 120, 0, 0.9);
-}
-
-/* ===== TITULO DO CARD ===== */
 .card-title {
-  display: flex;
-  justify-content: space-between;
-  font-size: 18px;
   font-weight: bold;
   color: #ffd27d;
+  margin-bottom: 10px;
 }
 
 .price {
   color: #00ff99;
 }
 
-/* ===== TEXTO ===== */
-.card p {
-  font-size: 14px;
-  color: #ddd;
+.lp {
+  background: black;
+  padding: 6px;
+  border-radius: 6px;
+  font-family: monospace;
+  color: #ffae00;
   margin-top: 10px;
-}
-
-/* ===== BOTÃO ===== */
-.btn {
-  margin-top: 20px;
-  width: 100%;
-  padding: 12px;
-  background: linear-gradient(90deg, #ff4500, #ffae00);
-  border: none;
-  border-radius: 12px;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 0 15px #ff4500;
-}
-
-.btn:hover {
-  background: linear-gradient(90deg, #ffae00, #ff4500);
-  box-shadow: 0 0 25px #ffae00;
+  display: inline-block;
 }
 </style>
 </head>
@@ -139,56 +81,35 @@ h2 {
 <h2>Kits VIP</h2>
 <div class="container">
 
-  <div class="card">
-  <div class="card-title">
-    VIP Fênix <span class="price">R$ 69,90</span>
-  </div>
-
-  <p>Kit VIP supremo com poderes lendários.</p>
-
-  <button class="btn" onclick="toggleVip('fenix')">
-  Itens e Benefícios
-</button>
-
-<div class="vip-details" id="fenix">
-  <!-- IMAGENS -->
-  <img src="item1.png">
-  <img src="item2.png">
-
-  <!-- TEXTO -->
-  <p><strong>Benefícios do VIP Fênix</strong></p>
-
+<div class="card">
+  <div class="card-title">VIP Fênix <span class="price">R$ 69,90</span></div>
   <p>💰 500.000 de money</p>
   <p>✨ 20.000 shards</p>
-  <p>🏷 Tag VIP-FÊNIX</p>
   <p>🕊 /fly</p>
   <p>🛠 /mesas</p>
-
-  <!-- TAG LUCKYPERMS -->
-  <p><strong>TAG LuckyPerms:</strong></p>
-  <code>&6[VIP-FÊNIX]</code>
+  <div class="lp">&6[VIP-FÊNIX]</div>
 </div>
 
-  </div>
+<div class="card">
+  <div class="card-title">VIP Soberano <span class="price">R$ 49,99</span></div>
+  <p>💰 300.000 de money</p>
+  <p>⭐ Benefícios avançados</p>
+  <div class="lp">&e[VIP-SOBERANO]</div>
 </div>
 
-  <div class="card">
-    <div class="card-title">VIP Soberano <span class="price">R$ 49,99</span></div>
-    <p>Domine o servidor com vantagens exclusivas.</p>
-    <button class="btn">Itens e Benefícios</button>
-  </div>
+<div class="card">
+  <div class="card-title">VIP Nobre <span class="price">R$ 14,99</span></div>
+  <p>💰 100.000 de money</p>
+  <p>🎖 Vantagens iniciais</p>
+  <div class="lp">&a[VIP-NOBRE]</div>
+</div>
 
-  <div class="card">
-    <div class="card-title">VIP Nobre <span class="price">R$ 14,99</span></div>
-    <p>Comece sua jornada com estilo.</p>
-    <button class="btn">Itens e Benefícios</button>
-  </div>
-
-  <div class="card">
-    <div class="card-title">VIP Explorer <span class="price">R$ 9,99</span></div>
-    <p>Exploração e benefícios iniciais.</p>
-    <button class="btn">Itens e Benefícios</button>
-  </div>
+<div class="card">
+  <div class="card-title">VIP Explorer <span class="price">R$ 9,99</span></div>
+  <p>💰 50.000 de money</p>
+  <p>🧭 Começo facilitado</p>
+  <div class="lp">&b[VIP-EXPLORER]</div>
+</div>
 
 </div>
 
@@ -197,45 +118,64 @@ h2 {
 <div class="container">
 
   <div class="card">
-  <div class="card-title">Kit Clava <span class="price">R$ 24,99</span></div>
-  <p>Força bruta e poder em combate.</p>
-  <button class="btn">Itens e Benefícios</button>
-</div>
-
-
-  <div class="card">
-  <div class="card-title">Kit Streamer <span class="price">Em breve</span></div>
-  <p>Requisitos especiais para streamers.</p>
-  <button class="btn">Itens e Benefícios</button>
-</div>
-
-    <div class="card">
-  <div class="card-title">Kit Nitro <span class="price">Especial</span></div>
-  <p>Nitra o servidor 2 vezes.</p>
-  <button class="btn">Itens e Benefícios</button>
-</div>
-
-</div> <!-- FECHA CONTAINER DOS KITS -->
-
-<!-- KEYS -->
-<h2>Keys</h2>
-
-<div class="container">
+    <div class="card-title">Kit Clava <span class="price">R$ 24,99</span></div>
+    <p>🪓 O kit vem com:</p>
+    <p>• 3 Clavas FULL encantamentos</p>
+    <p>• 3 Elytras FULL encantamentos</p>
+  </div>
 
   <div class="card">
-    <div class="card-title">Keys</div>
+    <div class="card-title">Kit Streamer <span class="price">Em breve</span></div>
+    <p>📌 Requisitos:</p>
+    <p>Em breve...</p>
+  </div>
 
-    <p><strong>Key Ametista / Caixa Ametista</strong></p>
-    <p class="price">R$ 20,00</p>
-
-    <p>(Você pode escolher a recompensa da caixa)</p>
-
-    <p>
-      Exemplo: adquiri a key e escolhi a elytra indestrutível,
-      então automaticamente eu já recebo ela!
-    </p>
-
-    <button class="btn">Itens</button>
+  <div class="card">
+    <div class="card-title">Kit Nitro <span class="price">Especial</span></div>
+    <p>📌 Requisitos:</p>
+    <p>Nitrar o servidor 2 vezes</p>
   </div>
 
 </div>
+
+</div>
+
+</div>
+
+<!-- KEYS -->
+<h2>Keys</h2>
+<div class="container">
+
+<div class="card">
+  <div class="card-title">Key Ametista <span class="price">R$ 20,00</span></div>
+  <p>💎 Caixa Ametista</p>
+  <p>Você escolhe a recompensa.</p>
+  <p>Ex: escolheu a elytra indestrutível e recebe automaticamente.</p>
+</div>
+
+</div>
+<div style="text-align:center; margin:60px 0;">
+
+  <a href="https://discord.gg/wUFJs8j7"
+     target="_blank"
+     style="
+       display:inline-block;
+       padding:15px 35px;
+       background:#5865F2;
+       color:white;
+       font-weight:bold;
+       font-size:18px;
+       border-radius:15px;
+       text-decoration:none;
+     ">
+     💬 Entrar no Discord
+  </a>
+
+  <p style="margin-top:12px; font-size:14px; color:#ddd;">
+    Clique para ver os itens dos kits, vips e keys no Discord
+  </p>
+
+</div>
+
+</body>
+</html>
